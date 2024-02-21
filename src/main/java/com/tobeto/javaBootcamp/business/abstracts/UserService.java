@@ -12,6 +12,6 @@ public interface UserService {
     CreateUserResponse add(CreateUserRequest request);
     List<GetAllUserResponse> getAll();
      GetUserResponse getById(int id);
-
+    boolean deleteUser(int userId);
 
 }

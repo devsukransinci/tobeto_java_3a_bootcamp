@@ -53,4 +53,5 @@ public class ApplicantManager implements ApplicantService {
 
         return response;
     }
+
 }

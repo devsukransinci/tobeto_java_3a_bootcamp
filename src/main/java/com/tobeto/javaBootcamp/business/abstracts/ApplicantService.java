@@ -10,4 +10,5 @@ public interface ApplicantService {
     CreateApplicantResponse  add(CreateApplicantRequest  request);
     List<GetAllApplicantResponse> getAllApplicant();
     GetApplicantResponse  getByAbout(String about);
+
 }

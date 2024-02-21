@@ -56,4 +56,17 @@ public class UserManager implements UserService {
         return response;
     }
 
-}
+    @Override
+    public boolean deleteUser(int userId) {
+        if (userRepository.existsById(userId)) {
+            userRepository.deleteById(userId);
+            return true;
+        }
+        return false;
+    }
+    }
+
+
+
+
+

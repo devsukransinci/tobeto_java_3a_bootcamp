@@ -6,6 +6,7 @@ import com.tobeto.javaBootcamp.business.response.create.Applicant.CreateApplican
 import com.tobeto.javaBootcamp.business.response.get.Applicant.GetAllApplicantResponse;
 import com.tobeto.javaBootcamp.business.response.get.Applicant.GetApplicantResponse;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,12 +17,13 @@ import java.util.List;
 public class ApplicantController {
     private ApplicantService applicantService;
 
-    @PostMapping()
+    @Autowired
+    private ApplicantService  upplicantService;
 
+    @PostMapping()
     public CreateApplicantResponse add(@RequestBody CreateApplicantRequest  request){
         CreateApplicantResponse  result =applicantService.add(request);
         return  result;
-
     }
     @GetMapping("getallapplicants")
     public List<GetAllApplicantResponse> getAllApplicant(){
@@ -32,4 +34,8 @@ public class ApplicantController {
     public GetApplicantResponse  getByAbout(@PathVariable String about){
         return applicantService.getByAbout(about);
     }
+
+
+
+
 }
