@@ -24,5 +24,4 @@ public class BaseEntity <T> {
     @Column(name = "deletedDate")
     private LocalDateTime deletedDate;
 
-
 }

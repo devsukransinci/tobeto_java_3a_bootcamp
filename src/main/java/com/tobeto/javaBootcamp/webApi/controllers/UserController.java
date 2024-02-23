@@ -1,9 +1,11 @@
 package com.tobeto.javaBootcamp.webApi.controllers;
 import com.tobeto.javaBootcamp.business.abstracts.UserService;
 import com.tobeto.javaBootcamp.business.requests.create.user.CreateUserRequest;
-import com.tobeto.javaBootcamp.business.response.create.user.CreateUserResponse;
+import com.tobeto.javaBootcamp.business.response.create.User.CreateUserResponse;
+import com.tobeto.javaBootcamp.business.response.get.Applicant.GetApplicantResponse;
 import com.tobeto.javaBootcamp.business.response.get.user.GetAllUserResponse;
 import com.tobeto.javaBootcamp.business.response.get.user.GetUserResponse;
+import com.tobeto.javaBootcamp.core.utilities.results.DataResult;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,23 +17,26 @@ import java.util.List;
 @RequestMapping("/api/users")
 @AllArgsConstructor
 
-public class UserController {
+public class UserController extends BaseController {
     private  UserService userService;
     @PostMapping()
-  public CreateUserResponse add(@RequestBody CreateUserRequest request){
-        CreateUserResponse result =userService.add(request);
-   return  result;
+  public ResponseEntity <?> add(@RequestBody CreateUserRequest request){
+       return handleDataResult(userService.getAll());
 
 }
 @GetMapping("getall")
-public List <GetAllUserResponse> getAll(){
-        return userService.getAll();
+public ResponseEntity<?> getAll(){
+    return handleDataResult(userService.getAll());
+
 }
 
 @GetMapping("getbyId/{id}")
 public GetUserResponse getById(@PathVariable int id){
         return userService.getById(id);
+
 }
+
+
 
     @DeleteMapping("getbyId/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable int id) {

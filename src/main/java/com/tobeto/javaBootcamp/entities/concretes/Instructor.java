@@ -15,13 +15,16 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @Inheritance(strategy = InheritanceType.JOINED)
 
-public class Instructor extends BaseEntity<Integer> {
+public class Instructor extends User {
     @Column(name = "companyName")
     private String companyName;
 
- @ManyToOne(cascade = CascadeType.PERSIST)
- @JoinColumn (name = "userId")
- private User user;
+    @Column(name = "instructorId")
+    private int instructorId;
+
+@ManyToOne
+@JoinColumn (name = "userId")
+private User user;
 
 
 }

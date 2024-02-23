@@ -2,19 +2,15 @@ package com.tobeto.javaBootcamp.business.concretes;
 
 import com.tobeto.javaBootcamp.business.abstracts.InstructorService;
 import com.tobeto.javaBootcamp.business.requests.create.instructor.CreateInstructorRequest;
-import com.tobeto.javaBootcamp.business.requests.create.user.CreateUserRequest;
 import com.tobeto.javaBootcamp.business.response.create.Intructor.CreateInstructorResponse;
-import com.tobeto.javaBootcamp.business.response.create.user.CreateUserResponse;
 import com.tobeto.javaBootcamp.business.response.get.Intructor.GetAllInstructorResponse;
 import com.tobeto.javaBootcamp.business.response.get.Intructor.GetInstructorResponse;
 import com.tobeto.javaBootcamp.core.utilities.mapping.ModelMapperService;
 import com.tobeto.javaBootcamp.dataAccess.abstracts.InstructorRepository;
 import com.tobeto.javaBootcamp.entities.concretes.Instructor;
-import com.tobeto.javaBootcamp.entities.concretes.User;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,9 +20,6 @@ import java.util.stream.Collectors;
 public class InstructorManager implements InstructorService {
     private InstructorRepository instructorRepository;
     private ModelMapperService mapperService;
-
-
-
     @Override
     public CreateInstructorResponse add(CreateInstructorRequest request) {
 
@@ -55,4 +48,5 @@ public class InstructorManager implements InstructorService {
 
         return  response;
     }
+
 }

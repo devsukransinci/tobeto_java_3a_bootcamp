@@ -33,8 +33,7 @@ public class User extends BaseEntity<Integer> {
     @Column(name = "password")
     private String password;
 
-    @OneToMany(mappedBy = "user")
-    private List<Instructor> instructors;
+    @OneToMany(mappedBy = "user") private List<Instructor> instructors;
 
 
 }
