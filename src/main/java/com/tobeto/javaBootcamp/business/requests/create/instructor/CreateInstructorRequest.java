@@ -11,5 +11,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateInstructorRequest {
+    private int id;
     private String companyName;
 }

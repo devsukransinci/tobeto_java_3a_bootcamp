@@ -13,18 +13,9 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "instructors")
 @EqualsAndHashCode(callSuper = true)
-@Inheritance(strategy = InheritanceType.JOINED)
-
+@PrimaryKeyJoinColumn(name = "userId")
 public class Instructor extends User {
     @Column(name = "companyName")
     private String companyName;
-
-    @Column(name = "instructorId")
-    private int instructorId;
-
-@ManyToOne
-@JoinColumn (name = "userId")
-private User user;
-
 
 }

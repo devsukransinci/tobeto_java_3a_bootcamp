@@ -1,20 +1,15 @@
-package com.tobeto.javaBootcamp.business.concretes;
 
+package com.tobeto.javaBootcamp.business.concretes;
 import com.tobeto.javaBootcamp.business.abstracts.ApplicationStateService;
 import com.tobeto.javaBootcamp.business.requests.create.applicationState.CreateApplicationStateRequest;
-import com.tobeto.javaBootcamp.business.response.create.Application.CreateApplicationResponse;
 import com.tobeto.javaBootcamp.business.response.create.ApplicationState.CreateApplicationStateResponse;
-import com.tobeto.javaBootcamp.business.response.get.Application.GetAllApplicationResponse;
 import com.tobeto.javaBootcamp.business.response.get.ApplicationState.GetAllApplicationStateResponse;
 import com.tobeto.javaBootcamp.business.response.get.ApplicationState.GetApplicationStateResponse;
 import com.tobeto.javaBootcamp.core.utilities.mapping.ModelMapperService;
-import com.tobeto.javaBootcamp.dataAccess.abstracts.ApplicationRepository;
 import com.tobeto.javaBootcamp.dataAccess.abstracts.ApplicationStateRepository;
-import com.tobeto.javaBootcamp.entities.concretes.Application;
 import com.tobeto.javaBootcamp.entities.concretes.ApplicationState;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 @Service
@@ -25,7 +20,7 @@ public class ApplicationStateManager implements ApplicationStateService {
     @Override
     public CreateApplicationStateResponse add(CreateApplicationStateRequest request) {
         ApplicationState applicationState =mapperService.forRequest().map(request,ApplicationState.class);
-        applicationState.setId(request.getId());
+        //applicationState.setId(request.getId());
         applicationStateRepository.save(applicationState);
         CreateApplicationStateResponse response =mapperService.forResponse().map(applicationState,CreateApplicationStateResponse.class);
         return response;
@@ -45,6 +40,8 @@ public class ApplicationStateManager implements ApplicationStateService {
 
     @Override
     public GetApplicationStateResponse getById(int id) {
-        return null;
+        ApplicationState applicationState =applicationStateRepository.getById(id);
+        GetApplicationStateResponse response=  mapperService.forResponse().map(applicationState,GetApplicationStateResponse.class);
+        return response;
     }
 }

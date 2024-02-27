@@ -13,6 +13,6 @@ public class ErrorDataResult<T> extends DataResult <T>{
     public ErrorDataResult(){
         super(null,false);
 
-        //1.57.saatte kaldım
+
     }
 }

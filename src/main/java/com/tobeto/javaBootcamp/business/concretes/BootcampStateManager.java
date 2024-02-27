@@ -7,14 +7,20 @@ import com.tobeto.javaBootcamp.business.response.create.BootcampState.CreateBoot
 import com.tobeto.javaBootcamp.business.response.get.Bootcamp.GetAllBootcampResponse;
 import com.tobeto.javaBootcamp.business.response.get.BootcampState.GetAllBootcampStateResponse;
 import com.tobeto.javaBootcamp.business.response.get.BootcampState.GetBootcampStateResponse;
+import com.tobeto.javaBootcamp.business.response.get.user.GetUserResponse;
 import com.tobeto.javaBootcamp.core.utilities.mapping.ModelMapperService;
 import com.tobeto.javaBootcamp.dataAccess.abstracts.BootcampRepository;
 import com.tobeto.javaBootcamp.dataAccess.abstracts.BootcampStateRepository;
 import com.tobeto.javaBootcamp.entities.concretes.Bootcamp;
 import com.tobeto.javaBootcamp.entities.concretes.BootcampState;
+import com.tobeto.javaBootcamp.entities.concretes.User;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
+@Service
+@AllArgsConstructor
 
 public class BootcampStateManager implements BootcampStateService {
     private BootcampStateRepository bootcampStateRepository;
@@ -23,7 +29,7 @@ public class BootcampStateManager implements BootcampStateService {
     public CreateBootcampStateResponse add(CreateBootcampStateRequest request) {
 
         BootcampState bootcampState =mapperService.forRequest().map(request,BootcampState.class);
-        bootcampState.setId(request.getId());
+       // bootcampState.setId(request.getId());
         bootcampStateRepository.save(bootcampState);
         CreateBootcampStateResponse response =mapperService.forResponse().map(bootcampState,CreateBootcampStateResponse.class);
 
@@ -40,6 +46,9 @@ public class BootcampStateManager implements BootcampStateService {
 
     @Override
     public GetBootcampStateResponse getById(int id) {
-        return null;
+
+        BootcampState bootcampState =bootcampStateRepository.getById(id);
+        GetBootcampStateResponse response=  mapperService.forResponse().map(bootcampState,GetBootcampStateResponse.class);
+        return response;
     }
 }

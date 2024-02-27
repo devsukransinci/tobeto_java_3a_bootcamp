@@ -10,4 +10,6 @@ import lombok.NoArgsConstructor;
 
 public class CreateApplicationResponse {
     private  int id;
+
+
 }

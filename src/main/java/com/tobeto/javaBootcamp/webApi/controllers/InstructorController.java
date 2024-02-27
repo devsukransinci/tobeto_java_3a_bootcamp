@@ -4,8 +4,13 @@ import com.tobeto.javaBootcamp.business.requests.create.instructor.CreateInstruc
 import com.tobeto.javaBootcamp.business.response.create.Intructor.CreateInstructorResponse;
 import com.tobeto.javaBootcamp.business.response.get.Intructor.GetAllInstructorResponse;
 import com.tobeto.javaBootcamp.business.response.get.Intructor.GetInstructorResponse;
+import com.tobeto.javaBootcamp.core.utilities.paging.PageDto;
+import com.tobeto.javaBootcamp.core.utilities.results.DataResult;
 import lombok.AllArgsConstructor;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 @RestController
@@ -31,5 +36,12 @@ public class InstructorController {
     public GetInstructorResponse getByCompanyName(@PathVariable String companyName){
         return instructorService.getByCompanyName(companyName);
     }
+
+    //@GetMapping("sort")
+   // public ResponseEntity <?> getAllPage (@RequestBody PageDto pageDto){
+     //   return handleDataResult(instructorService.getAllPage(pageDto));
+    //}
+
+
 
 }

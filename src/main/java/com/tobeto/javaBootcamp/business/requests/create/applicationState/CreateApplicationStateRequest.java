@@ -10,4 +10,6 @@ import lombok.NoArgsConstructor;
 public class CreateApplicationStateRequest {
     private int id;
     private  String name;
+
+
 }

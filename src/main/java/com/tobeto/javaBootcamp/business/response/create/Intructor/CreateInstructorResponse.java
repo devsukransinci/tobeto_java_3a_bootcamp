@@ -13,5 +13,5 @@ import java.time.LocalDateTime;
 public class CreateInstructorResponse {
     private  int id;
     private String companyName;
-    private LocalDateTime createdDate;
+
 }

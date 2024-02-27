@@ -5,6 +5,6 @@ import com.tobeto.javaBootcamp.entities.concretes.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ApplicationRepository extends JpaRepository<Application,Integer> {
-    Application  getByApplicant(String applicant);
+   
     Application  getById(int id);
 }

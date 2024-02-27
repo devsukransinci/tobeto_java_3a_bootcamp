@@ -9,5 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetAllApplicationStateResponse {
     private int id;
-    private  String name;
+    private String name;
+
 }

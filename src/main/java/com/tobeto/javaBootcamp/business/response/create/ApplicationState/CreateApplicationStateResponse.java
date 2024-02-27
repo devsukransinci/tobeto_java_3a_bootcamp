@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class CreateApplicationStateResponse {
+public class CreateApplicationStateResponse  {
     private int id;
-    private  String name;
+private  String name;
 }

@@ -5,10 +5,12 @@ import com.tobeto.javaBootcamp.business.requests.create.bootcamp.CreateBootcampR
 import com.tobeto.javaBootcamp.business.response.create.Bootcamp.CreateBootcampResponse;
 import com.tobeto.javaBootcamp.business.response.get.Bootcamp.GetAllBootcampResponse;
 import com.tobeto.javaBootcamp.business.response.get.Bootcamp.GetBootcampResponse;
+import com.tobeto.javaBootcamp.business.response.get.BootcampState.GetBootcampStateResponse;
 import com.tobeto.javaBootcamp.core.utilities.mapping.ModelMapperService;
 import com.tobeto.javaBootcamp.dataAccess.abstracts.ApplicationStateRepository;
 import com.tobeto.javaBootcamp.dataAccess.abstracts.BootcampRepository;
 import com.tobeto.javaBootcamp.entities.concretes.Bootcamp;
+import com.tobeto.javaBootcamp.entities.concretes.BootcampState;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -40,6 +42,8 @@ public class BootcampManager implements BootcampService {
 
     @Override
     public GetBootcampResponse getById(int id) {
-        return null;
+        Bootcamp bootcamp =bootcampRepository.getById(id);
+        GetBootcampResponse response=  mapperService.forResponse().map(bootcamp,GetBootcampResponse.class);
+        return response;
     }
 }

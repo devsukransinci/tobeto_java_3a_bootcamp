@@ -5,6 +5,6 @@ import com.tobeto.javaBootcamp.entities.concretes.BootcampState;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BootcampStateRepository extends JpaRepository<BootcampState,Integer> {
-    BootcampState  name(String name);
+
     BootcampState  getById(int id);
 }

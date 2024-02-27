@@ -15,11 +15,8 @@ import java.util.List;
 @Entity
 @Table(name = "applicationsStates")
 @EqualsAndHashCode
-@Inheritance(strategy = InheritanceType.JOINED)
 public class ApplicationState extends BaseEntity<Integer> {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+
     @Column(name = "name")
     private  String name;
 

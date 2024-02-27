@@ -47,7 +47,8 @@ public class UserManager implements UserService {
               .collect(Collectors.toList());
 
 
-      return new SuccessDataResult<List<GetAllUserResponse>>(userResponses,UserMessage.UserListed);
+      return new SuccessDataResult<
+              List<GetAllUserResponse>>(userResponses,UserMessage.UserListed);
     }
 
     @Override
@@ -65,6 +66,7 @@ public class UserManager implements UserService {
         }
         return false;
     }
+
     }
 
 

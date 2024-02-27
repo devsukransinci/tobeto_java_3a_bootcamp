@@ -11,14 +11,8 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "bootcampStates")
-@EqualsAndHashCode
-@Inheritance(strategy = InheritanceType.JOINED)
 public class BootcampState extends BaseEntity<Integer> {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
     @Column(name = "name")
     private String name;
-    @OneToMany(mappedBy = "bootcampState")
-    private List<Bootcamp> bootcamps;
+
 }

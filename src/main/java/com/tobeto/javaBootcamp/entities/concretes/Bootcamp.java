@@ -4,7 +4,6 @@ import com.tobeto.javaBootcamp.core.entities.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
@@ -14,16 +13,11 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "bootcamps")
-@Inheritance(strategy = InheritanceType.JOINED)
-
 public class Bootcamp extends BaseEntity<Integer> {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
 
     @ManyToOne
     @JoinColumn(name = "instructorId")
-    private Instructor instructor;
+    private User instructor;
 
     @ManyToOne
     @JoinColumn(name = "bootcampStateId")
@@ -39,4 +33,5 @@ public class Bootcamp extends BaseEntity<Integer> {
 
     @OneToMany(mappedBy = "bootcamp")
     private List<Application> applications;
+
 }

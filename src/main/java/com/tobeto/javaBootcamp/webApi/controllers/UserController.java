@@ -36,8 +36,6 @@ public GetUserResponse getById(@PathVariable int id){
 
 }
 
-
-
     @DeleteMapping("getbyId/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable int id) {
         boolean deleted = userService.deleteUser(id);

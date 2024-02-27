@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class GetAllApplicationResponse {
     private  int id;
     private int applicantId;
+    private int applicationStateId;
     private int bootcampId;
-    private int bootcampStateId;
 
 }

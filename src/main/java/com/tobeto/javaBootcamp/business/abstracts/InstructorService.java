@@ -4,6 +4,8 @@ import com.tobeto.javaBootcamp.business.requests.create.instructor.CreateInstruc
 import com.tobeto.javaBootcamp.business.response.create.Intructor.CreateInstructorResponse;
 import com.tobeto.javaBootcamp.business.response.get.Intructor.GetAllInstructorResponse;
 import com.tobeto.javaBootcamp.business.response.get.Intructor.GetInstructorResponse;
+import com.tobeto.javaBootcamp.core.utilities.paging.PageDto;
+import com.tobeto.javaBootcamp.core.utilities.results.DataResult;
 
 import java.util.List;
 
@@ -12,6 +14,8 @@ public interface InstructorService {
     List<GetAllInstructorResponse> getAllInstructor();
 
     GetInstructorResponse getByCompanyName(String companyName);
+
+    DataResult<List <GetAllInstructorResponse>> getAllPage(PageDto pageDto);
 
 
 }

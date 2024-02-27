@@ -11,11 +11,13 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "applicants")
 @EqualsAndHashCode(callSuper = true)
-@Inheritance(strategy = InheritanceType.JOINED)
-
+@PrimaryKeyJoinColumn(name = "userId")
 public class Applicant extends User{
+
     @Column(name = "about")
     private String about;
+    @OneToOne(mappedBy = "applicant", cascade = CascadeType.ALL)
+    private BlackList blackList;
 
 }
 
