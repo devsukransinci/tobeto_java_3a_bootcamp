@@ -1,6 +1,4 @@
 package com.tobeto.javaBootcamp.entities.concretes;
-
-import com.tobeto.javaBootcamp.core.entities.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
