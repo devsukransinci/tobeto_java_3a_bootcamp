@@ -25,8 +25,10 @@ public class BlackListController extends BaseController {
 
     @GetMapping("/get/{id}")
     public ResponseEntity<?> getBlackListById(@PathVariable int id) {
+        
         return handleDataResult(blackListService.getById(id));
     }
+    
 
     @GetMapping("/get/all")
     public ResponseEntity<?> getAllBlackLists() {
