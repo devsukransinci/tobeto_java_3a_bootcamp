@@ -10,6 +10,6 @@ public class InternalServerErrorProblemDetail extends ProblemDetails {
         setType("http://tobeto.com/exceptions/internal");
         setStatus(HttpStatus.INTERNAL_SERVER_ERROR.toString());
     }
-
+//bu kısım daha sonra tekrar
 
 }
