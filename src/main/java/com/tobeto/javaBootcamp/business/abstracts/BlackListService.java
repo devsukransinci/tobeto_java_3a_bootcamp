@@ -13,4 +13,6 @@ public interface BlackListService {
     List<GetAllBlackListResponse> getAllBlackList();
 
     GetBlackListResponse getByDate(String date);
+
+    
 }
