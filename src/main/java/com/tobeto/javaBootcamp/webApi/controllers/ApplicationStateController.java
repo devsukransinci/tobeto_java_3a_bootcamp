@@ -30,6 +30,7 @@ public class ApplicationStateController {
         CreateApplicationStateResponse result = applicationStateService.add(request);
         return result;
 
+        
     }
 
     @GetMapping("getall")
