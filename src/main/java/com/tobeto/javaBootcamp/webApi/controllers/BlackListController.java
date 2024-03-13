@@ -28,6 +28,7 @@ public class BlackListController extends BaseController {
         
         return handleDataResult(blackListService.getById(id));
     }
+
     
 
     @GetMapping("/get/all")
